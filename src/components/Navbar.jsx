@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, FileText } from 'lucide-react';
+import { Menu, X, ArrowUpRight, FileText, Sparkles } from 'lucide-react';
 import { portfolioData } from '../data/portfolio.js';
 
 export default function Navbar({ onOpenCv }) {
@@ -50,7 +50,7 @@ export default function Navbar({ onOpenCv }) {
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#07090e]/90 backdrop-blur-md border-b border-slate-800/80 shadow-lg shadow-black/20 py-3.5'
+          ? 'bg-[#06080d]/85 backdrop-blur-xl border-b border-white/[0.08] shadow-[0_4px_30px_rgba(0,0,0,0.6)] py-3'
           : 'bg-transparent py-5'
       }`}
     >
@@ -61,20 +61,25 @@ export default function Navbar({ onOpenCv }) {
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, 'hero')}
-            className="flex items-center gap-2.5 text-lg font-bold tracking-tight text-white font-display whitespace-nowrap shrink-0 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-md"
+            className="flex items-center gap-3 text-lg font-bold tracking-tight text-white font-display whitespace-nowrap shrink-0 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 rounded-lg p-1"
             aria-label="Adnan Malik - Home"
           >
-            <span className="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white text-xs font-black shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform">
-              AM
-            </span>
-            <span className="text-slate-100 group-hover:text-white transition-colors">
-              Adnan Malik
-            </span>
+            <div className="relative">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 via-indigo-600 to-violet-600 flex items-center justify-center text-white text-xs font-black shadow-[0_0_15px_rgba(99,102,241,0.5)] group-hover:scale-105 transition-transform">
+                AM
+              </div>
+              <div className="absolute -inset-0.5 bg-gradient-to-tr from-cyan-400 to-violet-500 rounded-lg blur-xs opacity-0 group-hover:opacity-75 transition-opacity -z-10" />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-slate-100 group-hover:text-white transition-colors font-semibold tracking-tight">
+                Adnan Malik
+              </span>
+            </div>
           </a>
 
           {/* Zone 2: Navigation Links (Desktop) */}
           <nav
-            className="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300"
+            className="hidden lg:flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06] backdrop-blur-md shadow-inner"
             aria-label="Main Navigation"
           >
             {navLinks.map((link) => {
@@ -84,15 +89,15 @@ export default function Navbar({ onOpenCv }) {
                   key={link.id}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.id)}
-                  className={`relative py-1 transition-colors whitespace-nowrap shrink-0 ${
+                  className={`relative px-3.5 py-1 text-xs font-medium rounded-full transition-all duration-200 whitespace-nowrap shrink-0 ${
                     isActive
-                      ? 'text-white font-semibold'
-                      : 'text-slate-300 hover:text-white'
+                      ? 'text-white bg-white/[0.1] shadow-xs'
+                      : 'text-slate-400 hover:text-slate-200 hover:bg-white/[0.04]'
                   }`}
                 >
                   {link.label}
                   {isActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500 rounded-full" />
+                    <span className="absolute inset-x-2 -bottom-1 h-0.5 bg-gradient-to-r from-cyan-400 via-indigo-400 to-violet-400 rounded-full" />
                   )}
                 </a>
               );
@@ -104,26 +109,26 @@ export default function Navbar({ onOpenCv }) {
             <button
               onClick={onOpenCv}
               type="button"
-              className="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-slate-100 bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700/80 rounded-lg transition-all duration-200 hover:border-slate-600 shadow-sm active:scale-95 whitespace-nowrap shrink-0"
+              className="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 text-xs font-semibold text-slate-200 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] hover:border-indigo-400/40 rounded-xl transition-all duration-200 shadow-sm active:scale-95 whitespace-nowrap shrink-0 cursor-pointer"
             >
-              <FileText className="w-3.5 h-3.5 text-blue-400" />
-              <span>Download CV</span>
+              <FileText className="w-3.5 h-3.5 text-cyan-400" />
+              <span>Resume / CV</span>
             </button>
 
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, 'contact')}
-              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-lg transition-all duration-200 shadow-md shadow-blue-600/25 active:scale-95 whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 rounded-xl transition-all duration-200 shadow-[0_0_20px_rgba(99,102,241,0.35)] hover:shadow-[0_0_25px_rgba(99,102,241,0.5)] active:scale-95 whitespace-nowrap shrink-0"
             >
               <span>Let's Talk</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-white/90" />
             </a>
 
             {/* Mobile Hamburger Button */}
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-slate-400 hover:text-white hover:bg-slate-800/60 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+              className="lg:hidden p-2 text-slate-400 hover:text-white bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.08] rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
               aria-label={mobileMenuOpen ? 'Close Menu' : 'Open Menu'}
               aria-expanded={mobileMenuOpen}
             >
@@ -135,33 +140,33 @@ export default function Navbar({ onOpenCv }) {
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#0a0d14]/98 border-b border-slate-800 px-6 py-6 shadow-2xl backdrop-blur-xl animate-in fade-in slide-in-from-top-2 duration-200">
-          <nav className="flex flex-col gap-4 text-base font-medium">
+        <div className="lg:hidden bg-[#0a0d15]/98 border-b border-white/[0.08] px-6 py-6 shadow-2xl backdrop-blur-2xl">
+          <nav className="flex flex-col gap-2 text-sm font-medium">
             {navLinks.map((link) => (
               <a
                 key={link.id}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.id)}
-                className={`py-2 px-3 rounded-lg transition-colors ${
+                className={`py-2 px-3.5 rounded-xl transition-colors ${
                   activeSection === link.id
-                    ? 'bg-blue-600/15 text-blue-400 font-semibold'
-                    : 'text-slate-300 hover:text-white hover:bg-slate-800/40'
+                    ? 'bg-gradient-to-r from-indigo-500/20 to-purple-500/10 text-cyan-300 font-semibold border border-indigo-500/30'
+                    : 'text-slate-300 hover:text-white hover:bg-white/[0.05]'
                 }`}
               >
                 {link.label}
               </a>
             ))}
 
-            <div className="pt-4 border-t border-slate-800/80 flex flex-col gap-2.5">
+            <div className="pt-4 mt-2 border-t border-white/[0.08] flex flex-col gap-2.5">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenCv();
                 }}
-                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold text-slate-200 bg-slate-800/90 rounded-lg border border-slate-700/80 hover:bg-slate-700"
+                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold text-slate-200 bg-white/[0.05] rounded-xl border border-white/[0.1] hover:bg-white/[0.09]"
               >
-                <FileText className="w-4 h-4 text-blue-400" />
-                <span>Download CV</span>
+                <FileText className="w-4 h-4 text-cyan-400" />
+                <span>View Resume / CV</span>
               </button>
             </div>
           </nav>
