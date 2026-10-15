@@ -21,6 +21,8 @@ export const portfolioData = {
     email: "adnan.malik2012sgd@gmail.com",
     linkedin: "https://linkedin.com/in/adnan-mallik/",
     github: "https://github.com/adnan-malik",
+    whatsapp: "+923226411283",
+    whatsappMessage: "Hi Adnan, I saw your portfolio and would like to discuss a project with you.",
     location: "Available for Remote Worldwide",
     availableForHire: true,
     availabilityBadgeText: "Available for high-impact opportunities",
@@ -347,6 +349,8 @@ export const portfolioData = {
     subheading: "Whether you need a custom Shopify app, a scalable Laravel backend, or an end-to-end web application, I am available to discuss your goals.",
     email: "adnan.malik2012sgd@gmail.com",
     linkedin: "https://linkedin.com/in/adnan-mallik/",
-    github: "https://github.com/adnan-malik"
+    github: "https://github.com/adnan-malik",
+    whatsapp: "+923226411283",
+    whatsappMessage: "Hi Adnan, I saw your portfolio and would like to discuss a project with you."
   }
 };

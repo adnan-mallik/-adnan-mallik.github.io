@@ -143,6 +143,25 @@ npm run preview
 
 ---
 
+## ✏️ Customization Checklist
+
+All website content is centralized in **`src/data/portfolio.js`**. You can update any of the following fields:
+
+| Field | Location | Description |
+| :--- | :--- | :--- |
+| **WhatsApp Number** | `portfolioData.personal.whatsapp` | Set your phone number with country code (e.g. `+923001234567`) |
+| **WhatsApp Message** | `portfolioData.personal.whatsappMessage` | Default message prefilled when a client clicks WhatsApp |
+| **Email Address** | `portfolioData.personal.email` | Set your contact email for mailto & copy buttons |
+| **LinkedIn URL** | `portfolioData.personal.linkedin` | Link to your LinkedIn profile |
+| **GitHub URL** | `portfolioData.personal.github` | Link to your GitHub profile |
+| **CV File / Link** | `portfolioData.personal.cvUrl` | Direct link to a hosted PDF (or use the built-in CV generator) |
+| **Availability** | `portfolioData.personal.availableForHire` | Toggle `true` / `false` for hire status badge |
+| **Projects** | `portfolioData.projects` | Update live demo URLs, repository URLs, or add new projects |
+| **Experience** | `portfolioData.experience` | Update company names, dates, or add more roles |
+| **Tech Stack** | `portfolioData.skillGroups` | Add or adjust skills and technical competencies |
+
+---
+
 ## 📄 License
 
 MIT © Adnan Malik. Free to customize and adapt.

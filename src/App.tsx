@@ -11,6 +11,8 @@ import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 import CvModal from './components/CvModal.jsx';
 import ScrollProgressBar from './components/ScrollProgressBar.jsx';
+import FloatingContactButton from './components/FloatingContactButton.jsx';
+import WhatsAppButton from './components/WhatsAppButton.jsx';
 
 export default function App() {
   const [isCvOpen, setIsCvOpen] = useState(false);
@@ -42,6 +44,12 @@ export default function App() {
 
       {/* Footer */}
       <Footer />
+
+      {/* Floating Action Button (Visible after Hero) */}
+      <FloatingContactButton />
+
+      {/* WhatsApp Floating Action Button */}
+      <WhatsAppButton />
 
       {/* Interactive CV Modal & Download */}
       <CvModal isOpen={isCvOpen} onClose={() => setIsCvOpen(false)} />
